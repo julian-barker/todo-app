@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Lab - Class 31-34
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project: Todo App
 
-## Available Scripts
+### Author: Julian Barker
 
-In the project directory, you can run:
+### Problem Domain
 
-### `npm start`
+A Web Application for securely managing a To Do List.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Functional
 
-### `npm test`
+The To Do Manager application has the following overall requirements:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Designed to match the mock-up.
+  - Header, Main Section Footer.
+  - Use Mantine for styling and visual components.
 
-### `npm run build`
+- The header should present the main menu.
+  - Home Link, which shows the list of To Do Items as noted below.
+  - A Login section.
+    - When a user is not logged in:
+      - Show Login form.
+        - Require Fields: Username, Password
+    - When a user is logged in:
+      - Show a “Logout” link.
+        - When clicked, this should remove any cookies you have set and remove access.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- In the “Main” section:
+  - Nothing should be visible until a user has logged in successfully.
+  - The list of items in the to do list.
+    - Based on user preferences, show listings in groups of (3, 5, etc) and provide the ability to view multiple “pages” of results.
+    - Each item in list should show the text of the item as well as the assignee.
+      - Based on user preferences, hide or show completed items.
+      - If shown, completed items should be styled differently making their status visually obvious.
+    - For users with “Update” permissions:
+      - When an item is clicked, toggle the “complete” status of the item.
+    - For users with “Delete” permissions:
+      - Items should have a delete button associated with them.
+        - When clicked, remove the item from the list.
+    - For users with “Create” permissions:
+      - A Form where the user can add a new item to the todo list.
+        - Items should have the following fields:
+          - To Do Item Text.
+          - Assigned To.
+          - Status (complete/incomplete).
+          - Difficulty (number between 1 and 5).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Technical
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. React.
+2. Functional Components.
+3. Settings delivered to the application using Context.
+4. User Login & Permissions delivered to the application using Context.
+5. Local Storage / Cookies for storing login status.
+6. Local Storage / Cookies for storing user preferences.
+7. Axios for performing API Requests.
+8. Mantine Component Library for styling.
+9. Test Driven Development, using Jest.
+10. Tests will be runnable locally.
+    - Deployment to cloud provider.
 
-### `npm run eject`
+### Links and Resources
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Deployed Site](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### UML
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- ![UML-26](./assets/lab-11-UML.png) -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Setup
 
-## Learn More
+#### How to initialize/run your application (where applicable)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `npm i` - install all relevant packages on the local machine
+- `npm start` (alias for `node index.js`)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Features / Routes
 
-### Code Splitting
+- Allows drivers and vendors to respond to each other's events
+- Allows drivers and vendors to catch up on missed messages while they were disconnected
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Tests
 
-### Analyzing the Bundle Size
+- run tests with `npm test`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## For React Applications
 
-### Advanced Configuration
+ To deploy your application at GitHub pages, you'll need to add a home page property to your package.json which points to the deployed base URL of your GitHub Pages site.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  *NOTE: This will break deployments to other hosting services such as Netlify, Vercel, or AWS Amplify, so if you later wish to deploy there, remove this property completely*
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    {
+      "homepage": "https://yourname.github.io/repository-name"
+    }
