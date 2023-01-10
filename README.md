@@ -68,7 +68,7 @@ The To Do Manager application has the following overall requirements:
 
 ### UML
 
-<!-- ![UML-26](./assets/lab-11-UML.png) -->
+<!-- ![UML-31](./assets/lab-31-UML.png) -->
 
 ### Setup
 
@@ -77,23 +77,6 @@ The To Do Manager application has the following overall requirements:
 - `npm i` - install all relevant packages on the local machine
 - `npm start` (alias for `node index.js`)
 
-#### Features / Routes
-
-- Allows drivers and vendors to respond to each other's events
-- Allows drivers and vendors to catch up on missed messages while they were disconnected
-
 #### Tests
 
 - run tests with `npm test`
-
-
-
-## For React Applications
-
- To deploy your application at GitHub pages, you'll need to add a home page property to your package.json which points to the deployed base URL of your GitHub Pages site.
-
-  *NOTE: This will break deployments to other hosting services such as Netlify, Vercel, or AWS Amplify, so if you later wish to deploy there, remove this property completely*
-
-    {
-      "homepage": "https://yourname.github.io/repository-name"
-    }
