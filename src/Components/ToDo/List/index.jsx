@@ -36,15 +36,8 @@ const List = ({list, setList}) => {
     <div>
       <Pagination total={total} onChange={setActivePage} color="orange"/>
       <ul>
-        {sliced.map(item => (
-          <div key={item.id}>
-            <p>{item.text}</p>
-            <p><small>Assigned to: {item.assignee}</small></p>
-            <p><small>Difficulty: {item.difficulty}</small></p>
-            <div onClick={() => toggleComplete(item.id)}>{item.complete ? 'Complete 👊' : 'Incomplete 🤕'}</div>
-            <button onClick={() => deleteItem(item.id)}>Delete</button>
-            <hr />
-          </div>
+        {sliced.map((item, idx) => (
+          <ListItem key={item.id} idx={idx} item={item} deleteItem={deleteItem} toggleComplete={toggleComplete}/>
         ))}
       </ul>
 
