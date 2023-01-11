@@ -9,7 +9,7 @@ const settings = localStorage.getItem('settings') ? JSON.parse(localStorage.getI
 };
 
 const SettingsProvider = ({ children }) => {
-  const [displayed, setDisplayed] = useState(settings.displayed);
+  const [displayed, setDisplayed] = useState(parseInt(settings.displayed));
   const [hideCompleted, setHideCompleted] = useState(settings.hideCompleted);
   const [sort, setSort] = useState(settings.sortBy);
 

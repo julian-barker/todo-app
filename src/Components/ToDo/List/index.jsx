@@ -8,13 +8,14 @@ const List = ({list, setList}) => {
   const [activePage, setActivePage] = useState(1);
 
   const { displayed, hideCompleted, sort } = values;
-  const total = Math.ceil(list.length / displayed);
   const start = (activePage - 1) * displayed;
 
   const filtered = list.filter(item => hideCompleted ? !item.complete : true);
+  const total = Math.ceil(filtered.length / displayed);
   const sorted = filtered.sort((a, b) => b[sort] - a[sort]);
-  const sliced = sorted.slice(start, start + displayed);
 
+  const end = start + displayed;
+  const sliced = sorted.slice(start, end);
 
   function deleteItem(id) {
     const items = list.filter( item => item.id !== id );
