@@ -1,0 +1,38 @@
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.heading {
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status {
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  color: cornsilk;
+
+  &.complete {
+    background-color: darkgreen;
+  }
+
+  &.incomplete {
+    background-color: darkred;
+  }
+}
+
+
+.even {
+  background-color: antiquewhite;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
