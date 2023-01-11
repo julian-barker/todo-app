@@ -1,0 +1,21 @@
+form {
+  min-width: 22rem;
+  max-width: 30rem;
+  margin: 0 auto;
+  border: .1rem solid #333;
+  border-radius: 0.5rem;
+  padding: 0 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #eee;
+
+  h2 {
+    margin: 1rem 0;
+  }
+
+  label {
+    display: flex;
+    justify-content: space-between;
+  }
+}
