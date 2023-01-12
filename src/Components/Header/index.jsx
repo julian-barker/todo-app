@@ -18,11 +18,7 @@ const Header = () => {
         </Group>
         <Link to="/login">
           <Button variant="gradient" gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }}>
-            <Show
-              condition={loggedIn}
-              ifTrue="Logout"
-              ifFalse="Login"
-            />
+            {loggedIn ? 'Logout' : 'Login'};
           </Button>
         </Link>
       </Group>

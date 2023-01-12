@@ -22,7 +22,7 @@ const ToDo = () => {
   }
 
   return (
-    <Auth capability='read'>
+    <Auth>
       <div className='todo'>
         <Header list={list} />
         <div className='container'>
