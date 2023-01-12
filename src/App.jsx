@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './Components/Header';
-import SettingsProvider from './Context/Settings';
 import ToDo from './Components/ToDo';
 import Settings from './Components/Settings';
+import Login from './Components/Auth/Login';
 import {
   createRouteConfig,
   createReactRouter,
@@ -36,7 +36,18 @@ const settings = rootRoute.createRoute({
   ),
 });
 
-const routeConfig = rootRoute.addChildren([home, settings]);
+const login = rootRoute.createRoute({
+  path: '/login',
+  component: () => (
+    <>
+      <Header />
+      <Login />
+      <Outlet />
+    </>
+  ),
+});
+
+const routeConfig = rootRoute.addChildren([home, settings, login]);
 
 
 // const Layout = ({children}) => (

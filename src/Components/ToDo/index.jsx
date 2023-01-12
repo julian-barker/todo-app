@@ -4,6 +4,7 @@ import { SettingsContext } from '../../Context/Settings';
 import Header from './Header/index.jsx';
 import List from './List/index.jsx';
 import Form from './Form/index.jsx';
+import Auth from '../Auth';
 
 import './ToDo.scss';
 
@@ -21,22 +22,24 @@ const ToDo = () => {
   }
 
   return (
-    <div className='todo'>
-      <Header list={list} />
-      <div className='container'>
-        <div>
-          <ul>
-            <li>Currently displaying: {displayed}</li>
-            <li>Hide Completed: {hideCompleted ? 'yes' : 'no'}</li>
-            <li>Sorting By: {sort}</li>
-          </ul>
+    <Auth capability='read'>
+      <div className='todo'>
+        <Header list={list} />
+        <div className='container'>
+          <div>
+            <ul>
+              <li>Currently displaying: {displayed}</li>
+              <li>Hide Completed: {hideCompleted ? 'yes' : 'no'}</li>
+              <li>Sorting By: {sort}</li>
+            </ul>
 
-          <Form list={list} setList={updateList}/>
+            <Form list={list} setList={updateList}/>
+          </div>
+          <List list={list} setList={updateList}/>
         </div>
-        <List list={list} setList={updateList}/>
-      </div>
 
-    </div>
+      </div>
+    </Auth>
   );
 };
 
