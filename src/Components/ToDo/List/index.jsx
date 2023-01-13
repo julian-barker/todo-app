@@ -39,7 +39,7 @@ const List = ({list, setList}) => {
   async function toggleComplete(id) {
     try {
       const response = await fetch(`https://api-js401.herokuapp.com/api/v1/todo/${id}`, {
-        method: 'update',
+        method: 'put',
         headers: {
           'Content-Type': 'application/json',
         },
