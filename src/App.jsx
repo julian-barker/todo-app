@@ -5,7 +5,7 @@ import Settings from './Components/Settings';
 import Login from './Components/Auth/Login';
 import {
   createRouteConfig,
-  createReactRouter,
+  ReactRouter,
   RouterProvider,
   Outlet
 } from '@tanstack/react-router';
@@ -78,7 +78,7 @@ const routeConfig = rootRoute.addChildren([home, settings, login]);
 //   layoutRoute.addChildren([home, settings]),
 // ]);
 
-const router = createReactRouter({routeConfig});
+const router = new ReactRouter({routeConfig});
 
 const App = () => {
   return (
